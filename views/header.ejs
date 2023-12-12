@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
+    <link rel="stylesheet" href="/css/styles.css">
+    <title>Tip Tracker</title>
+    <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.11.6/dist/umd/popper.min.js"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link rel="stylesheet" href="//code.jquery.com/ui/1.12.1/themes/smoothness/jquery-ui.css">
+    <script src="//code.jquery.com/jquery-1.12.4.js"></script>
+    <script src="//code.jquery.com/ui/1.12.1/jquery-ui.js"></script>
+
+    <link
+        href="https://fonts.googleapis.com/css2?family=Inter:wght@300&family=Montserrat:wght@300;400;900&family=Ubuntu&family=Urbanist:wght@300&display=swap"
+        rel="stylesheet">
+    <link href="https://cdn.lineicons.com/4.0/lineicons.css" rel="stylesheet" />
+    <link rel="stylesheet" type="text/css" href="/css/jquery-ui.css">
+
+
+</head>
+
+<body>
+    <header class="">
+        <div class="container d-flex justify-content-between align-items-center">
+            <a href="/home">
+                <div class="header-icons">
+                    <div class="header-icon"><i class="lni lni-home"></i></div>
+                </div>
+            </a>
+            <h1 style="font-style: italic">Tip Tracker</h1>
+            <div class="header-icons">
+                <% if (isAuthenticated) { %>
+                    <a href="/logout" style="text-decoration: none; color: inherit;">
+                        <div class="">Log Out</div>
+                    </a>
+                    <% } %>
+            </div>
+        </div>
+    </header>
+
+    <body>

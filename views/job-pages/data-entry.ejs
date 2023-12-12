@@ -1,0 +1,52 @@
+<%- include('../header') %>
+
+    <h1>
+        Job: <%= jobName %>
+    </h1>
+    <h2>
+        <%= date %>
+    </h2>
+
+
+    <div class="container text-center">
+        <form action="/submit-form" method="post">
+            <input type="hidden" name="jobName" value="<%= jobName %>">
+            <input type="hidden" name="date" value="<%= date %>">
+            <div class="row">
+                <div class="col-12">
+                    <label id="hourlyWage" for="hourlyWage" class="d-block text-left">Hourly Wage</label>
+                    <input class="form-control" type="text" name="hourlyWage" value="15">
+                </div>
+            </div>
+
+            <div class="row">
+                <div class="col-6">
+                    <label for="cashTips" class="d-block text-left">Cash Tips</label>
+                    <input class="form-control" type="text" name="cashTips" placeholder="Cash" autocomplete="off">
+                </div>
+                <div class="col-6">
+                    <label for="creditTips" class="d-block text-left">Credit Tips</label>
+                    <input class="form-control" type="text" name="creditTips" placeholder="Credit" autocomplete="off">
+                </div>
+            </div>
+
+            <div class="row">
+                <div class="col-6">
+                    <label for="startTime" class="d-block text-left">Start Time</label>
+                    <input class="form-control" type="time" name="startTime" placeholder="" autocomplete="off">
+                </div>
+                <div class="col-6">
+                    <label for="endTime" class="d-block text-left">End Time</label>
+                    <input class="form-control" type="time" name="endTime" placeholder="" autocomplete="off">
+                </div>
+            </div>
+
+            <div class="button-container mt-3">
+                <input type="submit" class="btn fixed-width-button button"></input>
+            </div>
+        </form>
+    </div>
+
+
+
+    <%- include('../footer') %>

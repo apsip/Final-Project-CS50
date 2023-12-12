@@ -1,0 +1,35 @@
+<%- include('header'); %>
+
+    <h1>Select Job</h1>
+    <div class="or-line">
+        <div class="line">
+            <div class="job container text-center">
+                <div class="row">
+                    <div class="col-12">
+                        <% for (var i=0; i < jobList.length; i++) { %>
+                            <div class="item">
+                                <!-- Render each job as a link -->
+                                <a href="/selectJob/<%= encodeURIComponent(jobList[i]) %>">
+                                    <%= jobList[i] %>
+                                </a>
+                            </div>
+                            <% } %>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <div class="container text-center">
+        <form action="/addJob" method="post">
+            <div class="row">
+                <div class="col-12">
+                    <label for="newJob">Add New Job:</label>
+                    <input type="text" id="newJob" name="newJob" required autocomplete="off">
+                    <button class="btn fixed-width-button button" type="submit">Add Job</button>
+                </div>
+            </div>
+        </form>
+    </div>
+
+    <%- include('footer'); %>

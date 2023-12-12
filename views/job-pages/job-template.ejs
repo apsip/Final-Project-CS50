@@ -1,0 +1,22 @@
+<%- include('../header' , { isAuthenticated: isAuthenticated }) %>
+
+    <div class="container text-center">
+        <div class="row">
+            <div class="col-12">
+                <div class="button-container">
+                    <p>Enter your hours, breaks, tips...</p>
+                    <a href="/selectJob/<%= encodeURIComponent(jobName) %>/log-income"
+                        class="btn fixed-width-button button">Log Income</a>
+                </div>
+                <div>
+                    <p>See how much you have earned</p>
+                    <a href="/selectJob/<%= encodeURIComponent(jobName) %>/view-income"
+                        class="btn fixed-width-button button">View Income</a>
+                </div>
+            </div>
+        </div>
+    </div>
+
+
+
+    <%- include('../footer') %>

@@ -1,0 +1,32 @@
+<%- include('header') %>
+
+    <h1>Create Account</h1>
+
+    <div class="container text-center">
+        <div class="row">
+            <div class="col-12">
+                <form action="/create-account" method="post" class="center-form">
+                    <div class="form-floating">
+                        <input type="text" class="form-control bottom" id="firstName" name="firstName">
+                        <label for="firstName">First Name</label>
+                    </div>
+                    <div class="form-floating">
+                        <input type="text" class="form-control bottom" id="lastName" name="lastName">
+                        <label for="lastName">Last Name</label>
+                    </div>
+                    <div class="form-floating">
+                        <input type="email" class="form-control bottom" id="email" name="email">
+                        <label for="email">Email Address</label>
+                    </div>
+                    <div class="form-floating">
+                        <input type="password" class="form-control bottom" id="password" name="password">
+                        <label for="password">Password</label>
+                    </div>
+                    <button type="submit" class="btn fixed-width-button button">Create Account</button>
+
+                </form>
+            </div>
+        </div>
+    </div>
+
+    <%- include('footer') %>

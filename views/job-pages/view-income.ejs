@@ -1,0 +1,70 @@
+<%- include('../header') %>
+
+    <h1>Income Details for <%= jobName %>
+    </h1>
+
+    <div class="container text-center">
+        <div class="row">
+            <div class="col-12">
+
+                <form action="/selectJob/<%= jobName %>/view-income" method="get">
+                    <label for="month">Select Month:</label>
+                    <input type="number" name="month" min="1" max="12"
+                        value="<%= selectedMonth || (new Date()).getMonth() + 1 %>">
+
+                    <label for="year">Select Year:</label>
+                    <input type="number" name="year" min="2000" max="2100" value="<%= selectedYear %>" required>
+
+                    <button class="button" type="submit">Filter</button>
+                </form>
+
+                <table class="table">
+                    <thead>
+                        <tr>
+                            <th>Date</th>
+                            <th>Start Time</th>
+                            <th>End Time</th>
+                            <th>Hourly Wage</th>
+                            <th>Cash Tips</th>
+                            <th>Credit Tips</th>
+                            <th>Total Hours</th>
+                            <th>Total Income</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <% tips.forEach(tip=> { %>
+                            <tr>
+                                <td>
+                                    <%= tip.date.toLocaleDateString('en-US', { year: 'numeric' , month: '2-digit' ,
+                                        day: '2-digit' , hour: '2-digit' , minute: '2-digit' , second: '2-digit' }) %>
+                                </td>
+                                <td>
+                                    <%= new Date('2000-01-01T' + tip.startTime).toLocaleTimeString('en-US', {
+                                        hour: 'numeric' , minute: 'numeric' , hour12: true }) %>
+                                </td>
+                                <td>
+                                    <%= new Date('2000-01-01T' + tip.endTime).toLocaleTimeString('en-US', {
+                                        hour: 'numeric' , minute: 'numeric' , hour12: true }) %>
+                                </td>
+                                <td>$<%= tip.hourlyWage %>
+                                </td>
+                                <td>$<%= tip.cashTips %>
+                                </td>
+                                <td>$<%= tip.creditTips %>
+                                </td>
+                                <td>
+                                    <%= tip.totalHours %>
+                                </td>
+                                <td>$<%= tip.totalIncome %>
+                                </td>
+                            </tr>
+                            <% }); %>
+                    </tbody>
+                </table>
+
+                <a href="/home" class="btn fixed-width-button button">Home</a>
+            </div>
+        </div>
+    </div>
+
+    <%- include('../footer') %>

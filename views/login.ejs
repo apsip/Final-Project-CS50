@@ -1,0 +1,45 @@
+<%- include('header'); %>
+
+
+    <% if (message.length> 0) { %>
+        <p style="color: red;">
+            <%= message %>
+        </p>
+        <% } %>
+
+
+            <div class="container text-center">
+                <div class="row">
+                    <div class="col-12">
+                        <div class="button-container">
+                            <form action="/login" method="post" class="center-form">
+                                <div class="form-floating">
+                                    <input type="email" class="form-control bottom" id="username" name="username">
+                                    <label for="username">Email Address</label>
+                                </div>
+                                <div class="form-floating">
+                                    <input type="password" class="form-control bottom" id="password" name="password"
+                                        autocomplete="off">
+                                    <label for="password">Password</label>
+                                </div>
+                                <div class="button-container">
+                                    <button type="submit" class="btn fixed-width-button button">Log In</button>
+                                </div>
+                            </form>
+                        </div>
+
+                        <div class="or-line">
+                            <hr class="line">
+                            <span class="or-text">or</span>
+                            <hr class="line">
+                        </div>
+
+                        <div class="button-container">
+                            <a href="/create-account" class="btn fixed-width-button button">Create Account</a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+
+            <%- include('footer'); %>

@@ -1,0 +1,27 @@
+<%- include('header') %>
+
+    <h1>Success!</h1>
+    <p>Job Name: <%= jobName %>
+    </p>
+    <p>Date: <%= date %>
+    </p>
+    <p>Total Hourly: $<%= roundedTotalHourlyAmount %>
+    </p>
+    <p>Cash Tips: $<%= cashTips %>
+    </p>
+    <p>Credit Tips: $<%= creditTips %>
+    </p>
+    <p>Total Income: $<%= totalTips %>
+    </p>
+
+    <div class="container text-center">
+        <div class="row">
+            <div class="col-12">
+                <div>
+                    <a href="/home" class="btn fixed-width-button button">Home</a>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <%- include('footer') %>
